@@ -1,0 +1,19 @@
+.Example {
+  background: blue;
+  padding: 10px;
+  margin: 10px 0;
+
+  & > &__ {
+    &name {
+      color: red;
+    }
+  }
+
+  & > &  {
+    background: red;
+  }
+
+  & > & > &__name {
+    color: white;
+  }
+}

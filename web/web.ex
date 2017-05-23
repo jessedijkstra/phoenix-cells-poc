@@ -34,6 +34,23 @@ defmodule Example.Web do
   def view do
     quote do
       use Phoenix.View, root: "web/templates"
+      import Phoenix.Cell.Helpers
+
+      # Import convenience functions from controllers
+      import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
+
+      # Use all HTML functionality (forms, tags, etc)
+      use Phoenix.HTML
+
+      import Example.Router.Helpers
+      import Example.ErrorHelpers
+      import Example.Gettext
+    end
+  end
+
+  def cell do
+    quote do
+      use Phoenix.Cell
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]

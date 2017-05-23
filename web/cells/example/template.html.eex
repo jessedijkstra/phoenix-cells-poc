@@ -1,0 +1,10 @@
+<div
+  class="<%= name %>"
+  data-cell="<%= name %>"
+  data-cell-params="<%= params(%{ name: assigns[:name] || "Klaas" }) %>"
+>
+  <h1 class="<%= class("name") %>"><%= assigns[:name] %></h1>
+  <%= if assigns[:children] do %>
+    <%= @children %>
+  <%= end %>
+</div>
